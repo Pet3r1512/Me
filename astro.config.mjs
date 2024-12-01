@@ -9,11 +9,5 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://peterpham.me.github.io",
-  base: "peter-pam",
-  integrations: [
-    react(),
-    tailwind({
-      applyBaseStyles: true,
-    }),
-  ],
+  integrations: [react(), tailwind()],
 });
