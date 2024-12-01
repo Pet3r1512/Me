@@ -1,6 +1,6 @@
 ---
 import ThemeToggle from "../components/ThemeToggle.tsx";
-import Welcome from "../components/Welcome.astro";
+import Welcome from "../components/Welcome.tsx";
 import Layout from "../layouts/Layout.astro";
 import { ViewTransitions } from "astro:transitions";
 
@@ -11,5 +11,5 @@ import { ViewTransitions } from "astro:transitions";
 <Layout>
   <ViewTransitions />
   <ThemeToggle client:only="react" />
-  <Welcome />
+  <Welcome client:only="react" />
 </Layout>
