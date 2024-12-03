@@ -13,7 +13,18 @@ export default function LatestProduct() {
       className="min-h-screen flex flex-col items-center justify-center gap-y-12"
     >
       <div className="flex flex-col items-center gap-y-10">
-        <h1 className="md:text-xl lg:text-2xl font-bold">
+        <h1
+          style={{
+            transform: isLatestProductInView
+              ? "none"
+              : window.innerWidth >= 1024
+                ? "translateY(200px)"
+                : "none", // Adjust the breakpoint as needed
+            opacity: isLatestProductInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+          className="md:text-xl lg:text-2xl font-bold"
+        >
           My <span className="text-secondary">Latest Product</span>
         </h1>
         <p

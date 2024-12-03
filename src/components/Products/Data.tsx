@@ -180,6 +180,13 @@ export default function Data() {
           </li>
         </ul>
       </div>
+      <a
+        href="https://github.com/Pet3r1512/DevIniter"
+        target="_blank"
+        className="dark:bg-secondary/90 bg-secondary/80 p-2.5 rounded-xl mt-auto w-fit text-black font-semibold lg:hover:bg-secondary transition-all duration-200 ease-linear"
+      >
+        Give me a star 🌠
+      </a>
     </section>
   );
 }
