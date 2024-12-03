@@ -1,6 +1,23 @@
+import { useInView } from "motion/react";
+import { useRef } from "react";
+
 export default function Info() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <section className="md:w-1/2 rounded-xl border-4 border-primary/30 p-5 flex flex-col gap-y-5">
+    <section
+      ref={ref}
+      style={{
+        transform: isInView
+          ? "none"
+          : window.innerWidth >= 1024
+            ? "translateX(-200px)"
+            : "none", // Adjust the breakpoint as needed
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      }}
+      className="md:w-1/2 rounded-xl border-4 border-primary/30 p-5 flex flex-col gap-y-5"
+    >
       <div className="flex flex-col gap-y-2.5">
         <p className="font-semibold lg:text-lg">🎯Missions: </p>
         <p className="lg:text-xl px-2.5">

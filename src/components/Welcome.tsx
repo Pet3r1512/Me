@@ -14,7 +14,11 @@ export default function Welcome() {
         >
           <h1
             style={{
-              transform: isWelcomeInView ? "none" : "translateX(-200px)",
+              transform: isWelcomeInView
+                ? "none"
+                : window.innerWidth >= 1024
+                  ? "translateX(-200px)"
+                  : "none",
               opacity: isWelcomeInView ? 1 : 0,
               transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}

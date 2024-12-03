@@ -18,22 +18,16 @@ export default function LatestProduct() {
         </h1>
         <p
           style={{
-            transform: isLatestProductInView ? "none" : "translateX(200px)",
+            transform: isLatestProductInView
+              ? "none"
+              : window.innerWidth >= 1024
+                ? "translateY(-200px)"
+                : "none", // Adjust the breakpoint as needed
             opacity: isLatestProductInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
           className="font-bold text-center text-3xl md:text-5xl lg:text-6xl hidden lg:block"
         >
-          <span>Introducing</span>{" "}
-          <a
-            href="https://www.deviniter.site/"
-            target="_blank"
-            className="text-primary underline"
-          >
-            DevIniter
-          </a>
-        </p>
-        <p className="font-bold text-center text-3xl md:text-5xl lg:text-6xl lg:hidden">
           <span>Introducing</span>{" "}
           <a
             href="https://www.deviniter.site/"
