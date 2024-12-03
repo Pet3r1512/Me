@@ -20,7 +20,10 @@ export default function Welcome() {
             }}
             className="md:text-xl lg:text-2xl font-bold cursor-default flex items-center gap-x-1.5 select-none"
           >
-            <span className="animate-wave inline-block">👋</span>Welcome to my{" "}
+            <span className="animate-wave inline-block">👋</span>
+            <span className=" dark:text-white text-black">
+              Welcome to my
+            </span>{" "}
             <span className="text-primary"> Personal Website</span>
           </h1>
           <div className="text-4xl md:text-5xl lg:text-7xl font-bold relative flex items-center gap-x-3">
