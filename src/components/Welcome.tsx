@@ -9,10 +9,6 @@ export default function Welcome() {
     <section ref={WelcomeRef} id="container">
       <main className="">
         <div
-          style={{
-            opacity: isWelcomeInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-          }}
           id="hero"
           className="flex flex-col gap-y-12 items-center justify-center min-h-[100dvh] lg:min-h-screen"
         >
@@ -34,7 +30,13 @@ export default function Welcome() {
             </span>{" "}
             <span className="text-primary"> Personal Website</span>
           </h1>
-          <div className="text-4xl md:text-5xl lg:text-7xl font-bold relative flex items-center gap-x-3">
+          <div
+            style={{
+              opacity: isWelcomeInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+            className="text-4xl md:text-5xl lg:text-7xl font-bold relative flex items-center gap-x-3"
+          >
             <p className="text-4xl md:text-5xl lg:text-7xl font-bold">
               Hi, <span className="text-secondary">I'm </span>
             </p>
@@ -49,7 +51,13 @@ export default function Welcome() {
               ></div>
             </div>
           </div>
-          <p className="max-w-3xl font-semibold md:text-lg lg:text-xl text-center">
+          <p
+            style={{
+              opacity: isWelcomeInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.75s",
+            }}
+            className="max-w-3xl font-semibold md:text-lg lg:text-xl text-center"
+          >
             I am a <span className="text-primary">Software Engineer </span>
             specializing in{" "}
             <span className="text-secondary">Frontend Development</span>, with a
