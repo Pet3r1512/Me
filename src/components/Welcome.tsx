@@ -9,6 +9,10 @@ export default function Welcome() {
     <section ref={WelcomeRef} id="container">
       <main className="">
         <div
+          style={{
+            opacity: isWelcomeInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
           id="hero"
           className="flex flex-col gap-y-12 items-center justify-center min-h-[100dvh] lg:min-h-screen"
         >
@@ -20,7 +24,7 @@ export default function Welcome() {
                   ? "translateX(-200px)"
                   : "none",
               opacity: isWelcomeInView ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.5s",
             }}
             className="md:text-xl lg:text-2xl font-bold cursor-default flex items-center gap-x-1.5 select-none"
           >
