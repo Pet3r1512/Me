@@ -11,7 +11,7 @@ const ThemeToggle = ({ className }: { className?: string }) => {
       className={cn(
         "!size-8 rounded-full flex items-center justify-center bg-gray-500 dark:bg-gray-200 transition-all duration-150 ease-linear",
         className,
-        "absolute top-12 left-24"
+        "absolute top-5 left-5 lg:top-12 lg:left-24"
       )}
     >
       {theme === "light" ? "🌙" : "☀️"}

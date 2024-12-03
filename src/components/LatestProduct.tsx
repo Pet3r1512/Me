@@ -22,8 +22,18 @@ export default function LatestProduct() {
             opacity: isLatestProductInView ? 1 : 0,
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
           }}
-          className="font-bold text-4xl md:text-5xl lg:text-6xl"
+          className="font-bold text-center text-3xl md:text-5xl lg:text-6xl hidden lg:block"
         >
+          <span>Introducing</span>{" "}
+          <a
+            href="https://www.deviniter.site/"
+            target="_blank"
+            className="text-primary underline"
+          >
+            DevIniter
+          </a>
+        </p>
+        <p className="font-bold text-center text-3xl md:text-5xl lg:text-6xl lg:hidden">
           <span>Introducing</span>{" "}
           <a
             href="https://www.deviniter.site/"

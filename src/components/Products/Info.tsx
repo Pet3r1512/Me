@@ -1,6 +1,6 @@
 export default function Info() {
   return (
-    <section className="w-1/2 rounded-xl border-4 border-primary/30 p-5 flex flex-col gap-y-5">
+    <section className="md:w-1/2 rounded-xl border-4 border-primary/30 p-5 flex flex-col gap-y-5">
       <div className="flex flex-col gap-y-2.5">
         <p className="font-semibold lg:text-lg">🎯Missions: </p>
         <p className="lg:text-xl px-2.5">

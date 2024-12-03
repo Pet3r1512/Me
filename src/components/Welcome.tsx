@@ -34,10 +34,10 @@ export default function Welcome() {
               Peter Pham
               <div
                 style={{
-                  width: !isWelcomeInView ? "0" : "340px",
+                  width: !isWelcomeInView ? "0" : "100%",
                   transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
                 }}
-                className="absolute bg-secondary/75 h-1 right-0"
+                className="absolute bg-secondary/75 h-1 right-0 w-[120px] lg:w-[340px]"
               ></div>
             </div>
           </div>

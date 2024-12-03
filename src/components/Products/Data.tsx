@@ -29,7 +29,7 @@ const animateValue = (
 
 export default function Data() {
   const ref = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: true, amount: 0.25 });
 
   const [weeklyDownloads, setWeeklyDownloads] = useState<number | null>(null);
   const [allTimeDownloads, setAllTimeDownloads] = useState<number | null>(null);
@@ -102,7 +102,7 @@ export default function Data() {
   return (
     <section
       ref={ref}
-      className="w-1/2 rounded-xl border-4 border-primary/30 p-5 flex flex-col gap-y-5"
+      className="md:w-1/2 rounded-xl border-4 border-primary/30 p-5 flex flex-col gap-y-5"
     >
       <div className="flex items-center gap-x-1.5">
         <p className="lg:text-xl font-semibold">📅 Latest Release: </p>
