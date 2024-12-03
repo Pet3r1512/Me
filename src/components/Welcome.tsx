@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useInView } from "motion/react";
+import Contact from "./Contact";
 
 export default function Welcome() {
   const WelcomeRef = useRef(null);
@@ -54,7 +55,7 @@ export default function Welcome() {
           <p
             style={{
               opacity: isWelcomeInView ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.75s",
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 2.5s",
             }}
             className="max-w-3xl font-semibold md:text-lg lg:text-xl text-center"
           >
@@ -65,6 +66,7 @@ export default function Welcome() {
             using <span className="text-blue-500">React.js</span>,{" "}
             <span className="text-purple-500">Vite</span>.
           </p>
+          <Contact />
         </div>
       </main>
     </section>
