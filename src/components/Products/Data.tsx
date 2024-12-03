@@ -104,7 +104,7 @@ export default function Data() {
 
           const totalStarsCount =
             (webStarData.stargazers_count + cliStarData.stargazers_count) | 11;
-          animateValue(0, totalStarsCount, 2000, setTotalStars);
+          animateValue(0, totalStarsCount || 11, 2000, setTotalStars);
         }
       } catch (err: any) {
         setError(err.message);
