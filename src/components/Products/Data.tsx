@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
 
-interface DownloadData {
-  downloads: number;
-  start: string;
-  end: string;
-  package: string;
-}
 
 export default function Data() {
   const [weeklyDownloads, setWeeklyDownloads] = useState<number | null>(null);
