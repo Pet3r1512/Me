@@ -1,13 +1,18 @@
 import { useRef } from "react";
 import { useInView } from "motion/react";
+import Info from "./Products/Info";
+import Data from "./Products/Data";
 
 export default function LatestProduct() {
   const ref = useRef(null);
   const isLatestProductInView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
-    <section ref={ref}>
-      <div className="min-h-screen flex flex-col items-center justify-center gap-y-12">
+    <section
+      ref={ref}
+      className="min-h-screen flex flex-col items-center justify-center gap-y-12"
+    >
+      <div className="flex flex-col items-center gap-y-10">
         <h1 className="md:text-xl lg:text-2xl font-bold">
           My <span className="text-secondary">Latest Product</span>
         </h1>
@@ -28,6 +33,10 @@ export default function LatestProduct() {
             DevIniter
           </a>
         </p>
+      </div>
+      <div className="flex gap-5 flex-col md:flex-row">
+        <Info />
+        <Data />
       </div>
     </section>
   );
