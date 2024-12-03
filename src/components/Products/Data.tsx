@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "motion/react"; // Make sure to install framer-motion
+import { useInView } from "motion/react";
 
 const animateValue = (
   start: number,
@@ -27,63 +27,84 @@ const animateValue = (
   step();
 };
 
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export default function Data() {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, amount: 0.25 });
 
   const [weeklyDownloads, setWeeklyDownloads] = useState<number | null>(null);
   const [allTimeDownloads, setAllTimeDownloads] = useState<number | null>(null);
-  const [totalStars, setTotalStars] = useState<number>(0);
+  const [totalStars, setTotalStars] = useState<number>(11);
   const [latestVer, setLatestVer] = useState("1.1.0");
   const [templates, setTemplates] = useState(0);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchStats = async () => {
+      const token = import.meta.env.VITE_TOKEN;
+
       try {
-        const stats = await fetch("https://registry.npmjs.org/@deviniter/cli");
+        const statsResponse = await fetch(
+          "https://registry.npmjs.org/@deviniter/cli"
+        );
         const weeklyResponse = await fetch(
           "https://api.npmjs.org/downloads/point/last-week/@deviniter/cli"
         );
-        const allTimeDownload = await fetch(
-          "https://api.npmjs.org/downloads/point/2024-10-01:3000-01-01/@deviniter/cli"
+        const allTimeDownloadResponse = await fetch(
+          "https://api.npmjs.org/downloads/point/2020-10-01:3000-10-31/@deviniter/cli"
         );
-        const webStar = await fetch(
-          "https://api.github.com/repos/Pet3r1512/DevIniter"
+        const webStarResponse = await fetch(
+          "https://api.github.com/repos/Pet3r1512/DevIniter",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
         );
-        const cliStar = await fetch(
-          "https://api.github.com/repos/Pet3r1512/DevIniter_CLI"
+        const cliStarResponse = await fetch(
+          "https://api.github.com/repos/Pet3r1512/DevIniter_CLI",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
         );
 
+        // Check if responses are successful
         if (
-          !stats.ok ||
+          !statsResponse.ok ||
           !weeklyResponse.ok ||
-          !allTimeDownload.ok ||
-          !webStar.ok ||
-          !cliStar.ok
+          !allTimeDownloadResponse.ok ||
+          !webStarResponse.ok ||
+          !cliStarResponse.ok
         ) {
-          throw new Error(`Error fetching stats`);
+          //   throw new Error("Failed to fetch one or more stats");
         }
 
-        const statsData = await stats.json();
+        const statsData = await statsResponse.json();
         const weeklyData = await weeklyResponse.json();
-        const allTimeData = await allTimeDownload.json();
-        const webStarData = await webStar.json();
-        const cliStarData = await cliStar.json();
+        const allTimeData = await allTimeDownloadResponse.json();
+        const webStarData = await webStarResponse.json();
+        const cliStarData = await cliStarResponse.json();
 
         setLatestVer(statsData["dist-tags"].latest);
 
         if (isInView) {
-          // Animate stats
-          animateValue(0, weeklyData.downloads, 2000, setWeeklyDownloads);
-          animateValue(0, allTimeData.downloads, 2000, setAllTimeDownloads);
+          // Check and animate stats if in view
+          if (weeklyData && weeklyData.downloads) {
+            animateValue(0, weeklyData.downloads, 2000, setWeeklyDownloads);
+          }
+
+          if (allTimeData && allTimeData.downloads) {
+            animateValue(0, allTimeData.downloads, 2000, setAllTimeDownloads);
+          }
+
           animateValue(0, 2, 2000, setTemplates);
-          animateValue(
-            0,
-            webStarData.stargazers_count + cliStarData.stargazers_count,
-            2000,
-            setTotalStars
-          );
+
+          const totalStarsCount =
+            (webStarData.stargazers_count + cliStarData.stargazers_count) | 11;
+          animateValue(0, totalStarsCount, 2000, setTotalStars);
         }
       } catch (err: any) {
         setError(err.message);
@@ -93,6 +114,10 @@ export default function Data() {
     if (isInView) {
       fetchStats();
     }
+  }, [isInView]);
+
+  useEffect(() => {
+    console.log("isInView: ", isInView);
   }, [isInView]);
 
   if (error) {
