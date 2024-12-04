@@ -10,7 +10,7 @@ export default function LatestProduct() {
   return (
     <section
       ref={ref}
-      className="min-h-screen flex flex-col items-center justify-center gap-y-12"
+      className="min-h-screen flex flex-col items-center justify-center gap-y-12 pb-24 lg:pb-0"
     >
       <div className="flex flex-col items-center gap-y-10">
         <h1
