@@ -9,7 +9,6 @@ const animateValue = (
 ) => {
   const range = end - start;
   const startTime = Date.now();
-  const endTime = startTime + duration;
 
   const step = () => {
     const now = Date.now();
@@ -27,11 +26,9 @@ const animateValue = (
   step();
 };
 
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export default function Data() {
   const ref = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.25 });
+  const isInView = useInView(ref, { once: true });
 
   const [weeklyDownloads, setWeeklyDownloads] = useState<number | null>(null);
   const [allTimeDownloads, setAllTimeDownloads] = useState<number | null>(null);
@@ -103,7 +100,7 @@ export default function Data() {
           animateValue(0, 2, 2000, setTemplates);
 
           const totalStarsCount =
-            (webStarData.stargazers_count + cliStarData.stargazers_count) | 11;
+            (webStarData.stargazers_count + cliStarData.stargazers_count) | 0;
           animateValue(0, totalStarsCount || 11, 2000, setTotalStars);
         }
       } catch (err: any) {
@@ -134,7 +131,7 @@ export default function Data() {
             ? "translateX(200px)"
             : "none", // Adjust the breakpoint as needed
         opacity: isInView ? 1 : 0,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.5s",
       }}
       className="md:w-1/2 rounded-xl border-4 border-primary/30 p-5 flex flex-col gap-y-5"
     >

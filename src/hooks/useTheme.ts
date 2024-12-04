@@ -4,7 +4,7 @@ export const useTheme = () => {
     const [theme, setTheme] = useState<string | null>(null);
 
     useEffect(() => {
-        const savedTheme = window.localStorage.getItem("theme") || "light";
+        const savedTheme = window.localStorage.getItem("theme") || "dark";
         setTheme(savedTheme);
 
         if (savedTheme === "dark") {
