@@ -100,8 +100,8 @@ export default function Data() {
           animateValue(0, 2, 2000, setTemplates);
 
           const totalStarsCount =
-            (webStarData.stargazers_count + cliStarData.stargazers_count) | 11;
-          animateValue(0, totalStarsCount, 2000, setTotalStars);
+            (webStarData.stargazers_count + cliStarData.stargazers_count) | 0;
+          animateValue(0, totalStarsCount || 11, 2000, setTotalStars);
         }
       } catch (err: any) {
         setError(err.message);
