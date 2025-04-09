@@ -52,7 +52,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-xl font-bold text-green-600 dark:text-green-400">
-          Portfolio
+          PeterPham.
         </div>
         {/* Mobile menu button */}
         <button
