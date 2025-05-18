@@ -2,7 +2,7 @@ export default function Introduction() {
   return (
     <div className="relative">
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white mb-6">
-        Software Developer{" "}
+        Software Engineer{" "}
         <span className="relative">
           <span className="absolute -inset-1 rounded-lg bg-gradient-to-r from-green-400 to-green-600 opacity-50 blur"></span>
           <span className="relative text-green-600 dark:text-green-400">
