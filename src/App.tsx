@@ -3,6 +3,7 @@ import AnimatedBackground from "./components/Background";
 import Header from "./components/Layout/Header/_index";
 import "./App.css";
 import Hero from "./components/Sections/Hero/_index";
+import About from "./components/Sections/About/_index";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <AnimatedBackground />
         <Header />
         <Hero />
+        <About />
       </div>
     </ThemeProvider>
   );
