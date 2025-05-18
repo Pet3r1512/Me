@@ -12,7 +12,7 @@ export default function About() {
             <div className="relative">
               <div className="aspect-square rounded-full overflow-hidden border-4 border-green-500 dark:border-green-400 shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+                  src="/avatar.JPG"
                   alt="Developer Portrait"
                   className="w-full h-full object-cover"
                 />
