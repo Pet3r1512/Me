@@ -2,7 +2,10 @@ import { UserIcon, CodeIcon, GlobeIcon } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
+    <section
+      id="about"
+      className="py-20 bg-white dark:bg-gray-900 min-h-screen"
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
           About <span className="text-green-600 dark:text-green-400">Me</span>
@@ -59,10 +62,10 @@ export default function About() {
                   className="text-green-600 dark:text-green-400 mb-2"
                 />
                 <h4 className="font-medium text-gray-800 dark:text-white mb-1">
-                  Personal Traits
+                  Early Strengths
                 </h4>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Problem solver, detail-oriented, continuous learner
+                  Eager to learn, adaptable, strong communication skills
                 </p>
               </div>
               <div className="bg-green-50 dark:bg-gray-800 p-4 rounded-lg">
@@ -71,10 +74,11 @@ export default function About() {
                   className="text-green-600 dark:text-green-400 mb-2"
                 />
                 <h4 className="font-medium text-gray-800 dark:text-white mb-1">
-                  Coding Philosophy
+                  Learning Focus
                 </h4>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Clean code, reusability, performance optimization
+                  Building fundamentals, exploring new technologies, writing
+                  maintainable code
                 </p>
               </div>
               <div className="bg-green-50 dark:bg-gray-800 p-4 rounded-lg">
@@ -83,10 +87,10 @@ export default function About() {
                   className="text-green-600 dark:text-green-400 mb-2"
                 />
                 <h4 className="font-medium text-gray-800 dark:text-white mb-1">
-                  Work Environment
+                  Ideal Environment
                 </h4>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
-                  Remote-friendly, collaborative, agile methodology
+                  Supportive teams, mentorship, opportunities to grow
                 </p>
               </div>
             </div>
