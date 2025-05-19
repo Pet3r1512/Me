@@ -4,6 +4,7 @@ import Header from "./components/Layout/Header/_index";
 import "./App.css";
 import Hero from "./components/Sections/Hero/_index";
 import About from "./components/Sections/About/_index";
+import Experience from "./components/Sections/Experience/_index";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Header />
         <Hero />
         <About />
+        <Experience />
       </div>
     </ThemeProvider>
   );
