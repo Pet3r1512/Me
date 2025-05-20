@@ -57,7 +57,7 @@ export default function Experience() {
         </h2>
         <div className="max-w-4xl mx-auto">
           {experiences.map((exp, index) => (
-            <ExperienceCard exp={exp} index={index} />
+            <ExperienceCard key={index} exp={exp} index={index} />
           ))}
         </div>
       </div>
