@@ -10,7 +10,8 @@ export default function Proficiency() {
         </li>
         <li>
           <strong>Front End: </strong>HTML5, CSS3(CSS-preprocessor: Sass),
-          ReactJS, TypeScript, TailwindCSS, Tanstack (Query, Router and Start)
+          ReactJS, ViteJS, TypeScript, TailwindCSS, Tanstack (Query, Router and
+          Start)
         </li>
         <li>
           <strong>Back End: </strong>NextJS (Page Router), ExpressJS, Hono, tRPC
@@ -19,8 +20,8 @@ export default function Proficiency() {
           <strong>Testing: </strong>Vitest, Jest
         </li>
         <li>
-          <strong>Databases and ORMs: </strong>NoSQL(MongoDB) and
-          SQL(PostgreSQL, MySQL), Prisma, Drizzle
+          <strong>Databases, Storage and ORMs: </strong>NoSQL(MongoDB) and
+          SQL(PostgreSQL, MySQL), Supabase, Prisma, Drizzle
         </li>
         <li>
           <strong>State Management: </strong>Zustand
@@ -33,6 +34,10 @@ export default function Proficiency() {
         </li>
         <li>
           <strong>Scripting: </strong>Bash
+        </li>
+        <li>
+          <strong>Other Tools: </strong>Visual Studio Code, Warp Terminal,
+          Postman
         </li>
       </ul>
     </div>
