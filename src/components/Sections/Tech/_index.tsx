@@ -5,7 +5,7 @@ import Proficiency from "./Proficiency";
 export default function TechStack() {
   return (
     <section
-      id="tech"
+      id="technologies"
       className="py-20 bg-green-50 dark:bg-gray-800 dark:text-white text-black"
     >
       <div className="container mx-auto px-4">
